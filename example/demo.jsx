@@ -23,6 +23,7 @@ const {
 const {
   HatenaBookmarkButton,
   FeedlyFeedButton,
+  PocketButton,
 } = ShareButtonsJ;
 
 const {
@@ -32,6 +33,7 @@ const {
 } = ShareCounts;
 const {
   HatenaBookmarkCount,
+  PocketCount,
 } = ShareCountsJ;
 
 const FacebookIcon = generateShareIcon('facebook');
@@ -41,6 +43,7 @@ const LinkedinIcon = generateShareIcon('linkedin');
 const VKIcon = generateShareIcon('vk');
 const HatenaIcon = generateShareIconJ('hatena');
 const FeedlyIcon = generateShareIconJ('feedly');
+const PocketIcon = generateShareIconJ('pocket');
 
 
 const Demo = React.createClass({
@@ -188,6 +191,39 @@ const Demo = React.createClass({
           <div className="Demo__some-network__share-count">
             &nbsp;
           </div>
+        </div>
+
+
+        <div className="Demo__some-network">
+          <PocketButton
+            url={shareUrl}
+            className="Demo__some-network__share-button">
+            <PocketIcon
+              size={32}
+              round={false} />
+          </PocketButton>
+
+          <PocketCount
+            url={shareUrl}
+            className="Demo__some-network__share-count">
+            {count => count}
+          </PocketCount>
+        </div>
+
+        <div className="Demo__some-network">
+          <PocketButton
+            url={shareUrl}
+            className="Demo__some-network__share-button">
+            <PocketIcon
+              size={32}
+              round />
+          </PocketButton>
+
+          <PocketCount
+            url={shareUrl}
+            className="Demo__some-network__share-count">
+            {count => count}
+          </PocketCount>
         </div>
       </div>
     );

@@ -77,3 +77,9 @@ export const FeedlyFeedButton = createShareButton('feedly', props => ({
   title: PropTypes.string.isRequired,
 });
 
+export const PocketButton = createShareButton('pocket', props => ({
+  title: props.title,
+}), {
+  title: PropTypes.string.isRequired,
+});
+

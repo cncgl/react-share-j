@@ -14,3 +14,9 @@ export function feedly(url) {
 
   return 'https://facebook.com/sharer.php' + objectToGetParams({ u: url });
 }
+
+export function pocket(url) {
+  assert(url, 'pocket.url');
+
+  return 'https://facebook.com/sharer.php' + objectToGetParams({ u: url });
+}

@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   getHatenaShareCount,
+  getPocketCount,
 } from './share-count-getters-j';
 
 const SocialMediaShareCount = React.createClass({
@@ -65,3 +66,4 @@ function shareCountFactory(getCount) {
 }
 
 export const HatenaBookmarkCount = shareCountFactory(getHatenaShareCount);
+export const PocketCount = shareCountFactory(getPocketCount);
