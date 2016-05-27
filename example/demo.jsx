@@ -48,8 +48,8 @@ const PocketIcon = generateShareIconJ('pocket');
 
 const Demo = React.createClass({
   render() {
-    const shareUrl = 'http://github.com';
-    const title = 'GitHub';
+    const shareUrl = 'http://cncgl.github.com/react-share-j';
+    const title = 'React-Share-J';
 
     return (
       <div className="Demo__container">
@@ -135,6 +135,7 @@ const Demo = React.createClass({
         <div className="Demo__some-network">
           <HatenaBookmarkButton
             url={shareUrl}
+            title={title}
             className="Demo__some-network__share-button">
             <HatenaIcon
               size={32}
@@ -151,6 +152,7 @@ const Demo = React.createClass({
         <div className="Demo__some-network">
           <HatenaBookmarkButton
             url={shareUrl}
+            title={title}
             className="Demo__some-network__share-button">
             <HatenaIcon
               size={32}
@@ -168,6 +170,7 @@ const Demo = React.createClass({
         <div className="Demo__some-network">
           <FeedlyFeedButton
             url={shareUrl}
+            title={title}
             className="Demo__some-network__share-button">
             <FeedlyIcon
               size={32}
@@ -197,6 +200,7 @@ const Demo = React.createClass({
         <div className="Demo__some-network">
           <PocketButton
             url={shareUrl}
+            title={title}
             className="Demo__some-network__share-button">
             <PocketIcon
               size={32}
@@ -213,6 +217,7 @@ const Demo = React.createClass({
         <div className="Demo__some-network">
           <PocketButton
             url={shareUrl}
+            title={title}
             className="Demo__some-network__share-button">
             <PocketIcon
               size={32}

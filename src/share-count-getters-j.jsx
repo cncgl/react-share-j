@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import jsonp from 'jsonp';
 import $ from 'jquery';
 
@@ -16,14 +17,14 @@ export function getPocketCount(shareUrl, callback) {
   const url = `${encodeURIComponent(shareUrl)}`;
   const endpoint = `https://widgets.getpocket.com/v1/button?count=vertical&url=${url}`;
 
-  $.ajaxPrefilter( function (options) {
+  $.ajaxPrefilter((options) => {
     if (options.crossDomain && $.support.cors) {
       const http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
-      options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+      options.url = `${http}//cors-anywhere.herokuapp.com/${options.url}`;
     }
   });
 
-  $.get(endpoint, function (response) {
+  $.get(endpoint, response => {
     const count = Number($(response).find('#cnt').text());
     callback(count);
   });
