@@ -1,37 +1,30 @@
 import jsonp from 'jsonp';
-import platform from 'platform';
+import $ from 'jquery';
 
-import { objectToGetParams } from './utils';
-
-
-export function getHatenaShareCount(shareUrl, callback) {
-  const fql = encodeURIComponent('select like_count, share_count from ' +
-    `link_stat where url = '${encodeURIComponent(shareUrl)}'`);
-
-  const endpoint = 'https://api.facebook.com/method/fql.query' +
-    `?format=json&query=${fql}`;
+export function getHatenaBookmarkCount(shareUrl, callback) {
+  const url = `${encodeURIComponent(shareUrl)}`;
+  const endpoint = `http://api.b.st-hatena.com/entry.count?url=${url}`;
 
   jsonp(endpoint, (err, data) => {
     if (!err) {
-      callback(data.length && data[0].share_count
-        ? data[0].share_count
-        : undefined);
+      callback(data);
     }
   });
 }
 
 export function getPocketCount(shareUrl, callback) {
-  const fql = encodeURIComponent('select like_count, share_count from ' +
-    `link_stat where url = '${encodeURIComponent(shareUrl)}'`);
+  const url = `${encodeURIComponent(shareUrl)}`;
+  const endpoint = `https://widgets.getpocket.com/v1/button?count=vertical&url=${url}`;
 
-  const endpoint = 'https://api.facebook.com/method/fql.query' +
-    `?format=json&query=${fql}`;
-
-  jsonp(endpoint, (err, data) => {
-    if (!err) {
-      callback(data.length && data[0].share_count
-        ? data[0].share_count
-        : undefined);
+  $.ajaxPrefilter( function (options) {
+    if (options.crossDomain && $.support.cors) {
+      const http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+      options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
     }
+  });
+
+  $.get(endpoint, function (response) {
+    const count = Number($(response).find('#cnt').text());
+    callback(count);
   });
 }
