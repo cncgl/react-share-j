@@ -48,7 +48,8 @@ const PocketIcon = generateShareIconJ('pocket');
 
 const Demo = React.createClass({
   render() {
-    const shareUrl = 'http://cncgl.github.com/react-share-j';
+    const shareUrl = 'http://cncgl.github.io/react-share-j';
+    const feedUrl = 'https://github.com/cncgl/react-share-j/commits/master.atom';
     const title = 'React-Share-J';
 
     return (
@@ -169,8 +170,7 @@ const Demo = React.createClass({
 
         <div className="Demo__some-network">
           <FeedlyFeedButton
-            url={shareUrl}
-            title={title}
+            url={feedUrl}
             className="Demo__some-network__share-button">
             <FeedlyIcon
               size={32}
@@ -184,7 +184,7 @@ const Demo = React.createClass({
 
         <div className="Demo__some-network">
           <FeedlyFeedButton
-            url={shareUrl}
+            url={feedUrl}
             className="Demo__some-network__share-button">
             <FeedlyIcon
               size={32}
@@ -195,7 +195,6 @@ const Demo = React.createClass({
             &nbsp;
           </div>
         </div>
-
 
         <div className="Demo__some-network">
           <PocketButton

@@ -72,9 +72,7 @@ export const HatenaBookmarkButton = createShareButton('hatena', props => ({
 });
 
 export const FeedlyFeedButton = createShareButton('feedly', props => ({
-  title: props.title,
 }), {
-  title: PropTypes.string.isRequired,
 });
 
 export const PocketButton = createShareButton('pocket', props => ({
@@ -82,4 +80,3 @@ export const PocketButton = createShareButton('pocket', props => ({
 }), {
   title: PropTypes.string.isRequired,
 });
-
