@@ -51,7 +51,7 @@ const Demo = React.createClass({
   render() {
     const shareUrl = 'http://cncgl.github.io/react-share-j';
     const feedUrl = 'https://github.com/cncgl/react-share-j/commits/master.atom';
-    const title = 'React-Share-J';
+    const title = '[React-Share-J]';
 
     return (
       <div className="Demo__container">

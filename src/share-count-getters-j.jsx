@@ -1,17 +1,27 @@
 /* eslint-disable no-param-reassign */
 import 'whatwg-fetch';
-import jsonp from 'jsonp';
+// import jsonp from 'jsonp';
 import $ from 'jquery';
 
 export function getHatenaBookmarkCount(shareUrl, callback) {
   const url = `${encodeURIComponent(shareUrl)}`;
   const endpoint = `http://api.b.st-hatena.com/entry.count?url=${url}`;
 
-  jsonp(endpoint, (err, data) => {
-    if (!err) {
-      callback(data);
-    }
+  $.ajax({
+    url: endpoint,
+    dataType: 'jsonp',
+    success: (count) => { callback(!!count ? count : 0); },
   });
+
+  // fetch(endpoint, {mode: 'cors'})
+  //   .then((res) => { return res.text(); })
+  //   .then((text) => { callback(Number(text)); });
+
+  // $.get(endpoint, (data) => { callback(!!data ? Number(data) : 0); });
+
+  // jsonp(endpoint, (err, data) => {
+  //   if (!err) { callback(data); }
+  // });
 }
 
 export function getFeedlyFeederCount(shareUrl, callback) {
@@ -20,25 +30,6 @@ export function getFeedlyFeederCount(shareUrl, callback) {
   const proxy = `https://crossorigin.me/${endpoint}`;
 
   $.get(proxy, (data) => { callback(!!data ? data.subscribers : 0); });
-
-  // fetch(proxy, {
-  //   method: 'GET',
-  //   mode: 'cors',
-  //   credentials: 'include'
-  // }).then(function(response) {
-  //   console.log(`response: ${response}`);
-  //   return response.json();
-  // }).then(function(json) {
-  //   console.log(json);
-  //   callback(json.describers);
-  // });
-
-
-  // jsonp(endpoint, (err, data) => {
-  //   console.log(`err: ${err} data: ${data}`);
-  //   const count = data ? Number(data.subscribers) : 0;
-  //   callback(count);
-  // });
 }
 
 export function getPocketCount(shareUrl, callback) {

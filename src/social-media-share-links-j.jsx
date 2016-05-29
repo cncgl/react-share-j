@@ -15,8 +15,8 @@ export function feedly(url) {
   return `http://cloud.feedly.com/#subscriptionen/feed/${encodeURIComponent(url)}`;
 }
 
-export function pocket(url) {
+export function pocket(url, opts) {
   assert(url, 'pocket.url');
 
-  return `http://getpocket.com/edit?url=${url}`;
+  return `http://getpocket.com/edit?url=${url}&title=${opts.title}`;
 }
