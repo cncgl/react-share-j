@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   getHatenaBookmarkCount,
+  getFeedlyFeederCount,
   getPocketCount,
 } from './share-count-getters-j';
 
@@ -66,4 +67,5 @@ function shareCountFactory(getCount) {
 }
 
 export const HatenaBookmarkCount = shareCountFactory(getHatenaBookmarkCount);
+export const FeedlyFeederCount = shareCountFactory(getFeedlyFeederCount);
 export const PocketCount = shareCountFactory(getPocketCount);
