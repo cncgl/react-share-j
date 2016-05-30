@@ -1,13 +1,6 @@
 /* eslint-disable prefer-template */
 import platform from 'platform';
 
-export function objectToGetParams(object) {
-  return '?' + Object.keys(object)
-      .filter(key => !!object[key])
-      .map(key => `${key}=${encodeURIComponent(object[key])}`)
-      .join('&');
-}
-
 export function windowOpen(url, name, height = 400, width = 550) {
   const left = (window.outerWidth / 2)
     + (window.screenX || window.screenLeft || 0) - (width / 2);

@@ -11,8 +11,6 @@ import {
   generateShareIconJ,
 } from '../lib/react-share-j';
 
-// import exampleImage from './react-share-pin-example.png';
-
 const {
   FacebookShareButton,
   GooglePlusShareButton,

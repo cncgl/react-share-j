@@ -1,5 +1,4 @@
 import React from 'react';
-
 import icons from './icons-j';
 
 export function generateIconJ(network) {
