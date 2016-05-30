@@ -31,7 +31,6 @@ const {
 } = ShareCounts;
 const {
   HatenaBookmarkCount,
-  FeedlyFeederCount,
   PocketCount,
 } = ShareCountsJ;
 
@@ -178,11 +177,9 @@ const Demo = React.createClass({
               round={false} />
           </FeedlyFeedButton>
 
-          <FeedlyFeederCount
-            url={feedUrl}
-            className="Demo__some-network__share-count">
-            {count => count}
-          </FeedlyFeederCount>
+          <div className="Demo__some-network__share-count">
+            &nbsp;
+          </div>
         </div>
 
         <div className="Demo__some-network">
@@ -195,11 +192,9 @@ const Demo = React.createClass({
               round />
           </FeedlyFeedButton>
 
-          <FeedlyFeederCount
-            url={feedUrl}
-            className="Demo__some-network__share-count">
-            {count => count}
-          </FeedlyFeederCount>
+          <div className="Demo__some-network__share-count">
+            &nbsp;
+          </div>
         </div>
 
         <div className="Demo__some-network">
