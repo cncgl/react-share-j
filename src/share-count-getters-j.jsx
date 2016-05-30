@@ -1,27 +1,16 @@
 /* eslint-disable no-param-reassign */
-import 'whatwg-fetch';
-// import jsonp from 'jsonp';
 import $ from 'jquery';
 
 export function getHatenaBookmarkCount(shareUrl, callback) {
   const url = `${encodeURIComponent(shareUrl)}`;
-  const endpoint = `http://api.b.st-hatena.com/entry.count?url=${url}`;
+  const baseUrl = window.location.protocol === 'https:' ? 'https://b.hatena.ne.jp' : 'http://api.b.st-hatena.com';
+  const endpoint = `${baseUrl}/entry.count?url=${url}`;
 
   $.ajax({
     url: endpoint,
     dataType: 'jsonp',
     success: (count) => { callback(!!count ? count : 0); },
   });
-
-  // fetch(endpoint, {mode: 'cors'})
-  //   .then((res) => { return res.text(); })
-  //   .then((text) => { callback(Number(text)); });
-
-  // $.get(endpoint, (data) => { callback(!!data ? Number(data) : 0); });
-
-  // jsonp(endpoint, (err, data) => {
-  //   if (!err) { callback(data); }
-  // });
 }
 
 export function getFeedlyFeederCount(shareUrl, callback) {

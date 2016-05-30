@@ -1,0 +1,8 @@
+src/
+example/
+.git
+.babelrc
+.eslintrc
+.gitignore
+.travis.yml
+*.config.js

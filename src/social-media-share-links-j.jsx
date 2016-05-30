@@ -12,7 +12,7 @@ export function hatena(url) {
 export function feedly(url) {
   assert(url, 'feedly.url');
 
-  return `http://cloud.feedly.com/#subscriptionen/feed/${encodeURIComponent(url)}`;
+  return `http://cloud.feedly.com/#subscription/feed/${encodeURIComponent(url)}`;
 }
 
 export function pocket(url, opts) {

@@ -52,6 +52,7 @@ const Demo = React.createClass({
     const shareUrl = 'http://cncgl.github.io/react-share-j';
     const feedUrl = 'https://github.com/cncgl/react-share-j/commits/master.atom';
     const title = '[React-Share-J]';
+    const hashtags = ['react-share-j'];
 
     return (
       <div className="Demo__container">
@@ -76,6 +77,7 @@ const Demo = React.createClass({
           <TwitterShareButton
             url={shareUrl}
             title={title}
+            hashtags={hashtags}
             className="Demo__some-network__share-button">
             <TwitterIcon
               size={32}
