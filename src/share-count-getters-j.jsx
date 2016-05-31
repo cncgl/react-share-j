@@ -21,16 +21,6 @@ export function getFeedlyFeederCount(shareUrl, callback) {
   $.getJSON(proxy).then(
     (data) => callback(!!data ? data.subscribers : 0)
   );
-  // $.ajax({
-  //   url: endpoint,
-  //   dataType: 'jsonp',
-  //   success: (data) => {
-  //     console.log(data);
-  //     callback(!!data ? data.subscribers : 0);
-  //   },
-  // });
-  // const proxy = `https://crossorigin.me/${endpoint}`;
-  // $.get(proxy, (data) => { callback(!!data ? data.subscribers : 0); });
 }
 
 export function getPocketCount(shareUrl, callback) {
