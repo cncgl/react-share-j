@@ -1,6 +1,6 @@
 {
   "name": "react-share-j",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "social media buttons popular in japan",
   "main": "./lib/react-share-j.js",
   "engines": {
@@ -11,7 +11,7 @@
     "example": "example"
   },
   "scripts": {
-    "build": "npm run lint && npm run build-src && npm run build-demos",
+    "build": "npm run build-src && npm run lint && npm run build-demos",
     "build-src": "babel ./src --out-dir ./lib",
     "build-demos": "NODE_ENV=production webpack -p --config webpack.demos.config.js",
     "run-demos": "NODE_ENV=development webpack-dev-server --config webpack.demos.config.js --content-base example/ --progress --colors",

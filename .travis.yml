@@ -11,6 +11,7 @@ env:
     - secure: jKn9lorVmBbHuCNI4buxnOHA1XMV+N5L4+kLsneebwdfEqkgTBdE7rxDUa7tTCL8Gtt7QDI2rvMmdovNS4GTx8j/sxZb8Eo3AlGRd8mlDnBLR9zSBbOME2pbV7a1a7/+sbM9p+FwXL1jKswdIhUz8yoQ+cnmhUO7U/HKew1oQ0E3veyTY0OFFGsEHwopfSK8QwlcvIKv6bxS+uG2mpVnK9BKIJDA+XNCxwV84qVugWzeos/9ZNX+FOcgIJWh/FvvxK7167MFhY5H5qzcXFJl6YeDzn3h3n5BY/g+ph2FPRvTVBZU9P7Z+/KuNqwWAYJuYdpHL1jU0spEcVgaorx6PpunOIXTbzADogJDk1tZpTOU+t3+iTRlXiM816AKKwZNPLOxVZCeA5AqWYCLB6sqvpfrzXBLlHAc8nOqycZkl9vPDR1PbUhvsLavIlZiG15XPmPsGxtlXxdtlinPws78pcWvN67/+qmvvmRpa6Dngwuy4TgYCLHpciy3YKawB1ZnuC6f0pGMMIlq0vpbS5fc93qRkU7o7W3U8BMtDRrbBcqqj8mI+W2jx8YvYCb+ccE1V73yn5tlAspx4luuB6GUx8rUi0sctvt25xQkTxxc2K0u31XjB37saTGg1LALGNfO6+GrD5ARYicrcQqiCIn7vCz9ZhqP399mCOaIXbmRna4=
 script:
   # - NODE_ENV=test npm test
+  - npm run build-src
   - npm run lint
 after_success:
   - mkdir -p lib
