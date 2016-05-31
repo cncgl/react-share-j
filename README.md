@@ -1,6 +1,8 @@
 # react-share-j
 
 [![Build Status](https://travis-ci.org/cncgl/react-share-j.svg?branch=master)](https://travis-ci.org/cncgl/react-share-j)
+[![Dependency Status](https://david-dm.org/cncgl/react-share-j.svg)](https://david-dm.org/cncgl/react-share-j)
+[![devDependency Status](https://david-dm.org/cncgl/react-share-j/dev-status.svg)](https://david-dm.org/cncgl/react-share-j#info=devDependencies)
 
 日本向けソーシャルボタン
 
