@@ -7,7 +7,9 @@ module.exports = {
   debug: true,
   devtool: '#inline-source-map',
   entry: {
-    demo0: ['./example/index.jsx'],
+    demo0: ['whatwg-fetch',
+      'fetch-jsonp',
+      './example/index.jsx'],
   },
   contentBase: './example',
   output: {

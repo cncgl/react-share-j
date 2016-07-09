@@ -1,16 +1,22 @@
 /* eslint-disable no-param-reassign */
 import $ from 'jquery';
+import fetchJsonp from 'fetch-jsonp';
 
 export function getHatenaBookmarkCount(shareUrl, callback) {
   const url = `${encodeURIComponent(shareUrl)}`;
   const baseUrl = window.location.protocol === 'https:' ? 'https://b.hatena.ne.jp' : 'http://api.b.st-hatena.com';
   const endpoint = `${baseUrl}/entry.count?url=${url}`;
 
-  $.ajax({
-    url: endpoint,
-    dataType: 'jsonp',
-    success: (count) => { callback(!!count ? count : 0); },
-  });
+  // $.ajax({
+  //   url: endpoint,
+  //   dataType: 'jsonp',
+  //   success: (count) => { callback(!!count ? count : 0); },
+  // });
+  fetchJsonp(endpoint)
+    .then((response) => response.json())
+    .then((count) => {
+      callback(!!count ? count : 0);
+    });
 }
 
 export function getFeedlyFeederCount(shareUrl, callback) {

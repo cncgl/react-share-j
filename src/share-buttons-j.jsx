@@ -50,9 +50,9 @@ export default class ShareButtonJ extends Component {
 /* HOC to ease migration from v1 to v2.
  * To-be-removed in v2.
  */
-function createShareButton(network, optsMap = () => ({}), propTypes) {
+function createShareButton(network, optsMap = () => ({}), props) {
   return React.createClass({
-    propTypes,
+    props,
 
     render() {
       return (
