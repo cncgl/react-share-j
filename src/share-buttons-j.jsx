@@ -9,10 +9,10 @@ const supportedNetworks = Object.keys(links);
 
 export default class ShareButtonJ extends Component {
   static propTypes = {
-    className: PropTypes.string,
-    network: PropTypes.oneOf(supportedNetworks),
-    url: PropTypes.string.isRequired,
-    opts: PropTypes.object,
+    className: PropTypes.string.isRequired,
+    network: PropTypes.oneOf(supportedNetworks).isRequired,
+    url: PropTypes.string.isRequired.isRequired,
+    opts: PropTypes.object.isRequired,
   };
 
   onClick = (e) => {
@@ -29,7 +29,7 @@ export default class ShareButtonJ extends Component {
     const {
       className,
       network,
-      ...rest,
+      ...rest
     } = this.props;
 
     return (
@@ -40,9 +40,8 @@ export default class ShareButtonJ extends Component {
         className={cx(
           'SocialMediaShareButton',
           `SocialMediaShareButton--${network}`,
-          className
-        )}>
-      </div>
+          className,
+        )} />
     );
   }
 }

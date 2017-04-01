@@ -10,9 +10,9 @@ export function generateIconJ(network) {
 
   return React.createClass({
     propTypes: {
-      className: React.PropTypes.string,
-      round: React.PropTypes.bool,
-      size: React.PropTypes.number,
+      className: React.PropTypes.string.isRequired,
+      round: React.PropTypes.bool.isRequired,
+      size: React.PropTypes.number.isRequired,
     },
 
     getDefaultProps() {
@@ -71,3 +71,5 @@ export function generateIconJ(network) {
     },
   });
 }
+
+export default generateIconJ;

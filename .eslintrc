@@ -11,11 +11,18 @@
   "plugins": [
     "react"
   ],
+  "globals": {
+    "window": true,
+    "document": true
+  },
   "rules": {
     "react/prefer-es6-class": 0,
     "react/jsx-closing-bracket-location": 0,
     "react/no-did-mount-set-state": 0,
     "react/no-is-mounted": 0,
-    "react/prefer-stateless-function": 0
+    "react/prefer-stateless-function": 0,
+    "react/forbid-prop-types": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "no-extra-boolean-cast": 0
   }
 }

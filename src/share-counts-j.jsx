@@ -8,9 +8,9 @@ import {
 
 const SocialMediaShareCount = React.createClass({
   propTypes: {
-    children: React.PropTypes.func,
-    className: React.PropTypes.string,
-    getCount: React.PropTypes.func,
+    children: React.PropTypes.func.isRequired,
+    className: React.PropTypes.string.isRequired,
+    getCount: React.PropTypes.func.isRequired,
     url: React.PropTypes.string.isRequired,
   },
 
@@ -26,7 +26,7 @@ const SocialMediaShareCount = React.createClass({
         isLoading: true,
       });
 
-      this.props.getCount(this.props.url, count => {
+      this.props.getCount(this.props.url, (count) => {
         if (this.isMounted()) {
           this.setState({
             count,

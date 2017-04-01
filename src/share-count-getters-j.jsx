@@ -13,7 +13,7 @@ export function getHatenaBookmarkCount(shareUrl, callback) {
   //   success: (count) => { callback(!!count ? count : 0); },
   // });
   fetchJsonp(endpoint)
-    .then((response) => response.json())
+    .then((response) => { response.json(); })
     .then((count) => {
       callback(!!count ? count : 0);
     });
@@ -25,7 +25,7 @@ export function getFeedlyFeederCount(shareUrl, callback) {
   const proxy = `https://crossorigin.me/${endpoint}`;
 
   $.getJSON(proxy).then(
-    (data) => callback(!!data ? data.subscribers : 0)
+    (data) => { callback(!!data ? data.subscribers : 0); },
   );
 }
 
@@ -40,7 +40,7 @@ export function getPocketCount(shareUrl, callback) {
     }
   });
 
-  $.get(endpoint, response => {
+  $.get(endpoint, (response) => {
     const count = Number($(response).find('#cnt').text());
     callback(count);
   });
