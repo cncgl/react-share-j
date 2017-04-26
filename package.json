@@ -1,6 +1,6 @@
 {
   "name": "react-share-j",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "social media buttons popular in japan",
   "main": "./lib/react-share-j.js",
   "engines": {
